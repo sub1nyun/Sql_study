@@ -1,0 +1,44 @@
+-- 모든 프로세스 조회 
+SHOW FULL PROCESSLIST;
+SHOW PROCESSLIST;
+SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST;
+
+DESC INFORMATION_SCHEMA.PROCESSLIST;
+
+use information_schema;
+select * from INNODB_LOCKS;
+
+-- 락 테이블 조회 
+select * from information_schema.innodb_locks;
+
+-- 대기중인 락 조회
+select * from information_schema.innodb_lock_waits;
+
+-- 트랜젝션조회    
+select * FROM information_schema.INNODB_TRX;
+
+SELECT * FROM information_schema.`PROCESSLIST`
+WHERE Command <> 'Sleep'
+AND USER NOT IN ('system user', 'event_scheduler')
+ORDER BY TIME DESC
+;
+
+SELECT * FROM information_schema.`PROCESSLIST`;
+SHOW VARIABLES WHERE VARIABLE_NAME='tx_isolation';
+
+use mysql;
+select user, host from user;
+
+select user();
+
+SHOW VARIABLES WHERE Variable_name = 'port';
+SHOW VARIABLES WHERE Variable_name = 'hostname';
+
+
+show status;
+show engine innodb status;
+
+select * from performance_schema.threads;
+
+SELECT * FROM INFORMATION_SCHEMA.GLOBAL_STATUS;
+SELECT * FROM INFORMATION_SCHEMA.SESSION_STATUS;
